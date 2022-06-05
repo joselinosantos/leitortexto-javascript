@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Leitor texto</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <button class="btn btn-lg btn-info" id="ler_texto">Ler texto</button>
+   <p class="texto display-4">Um leitor de tela (português brasileiro) ou leitor de ecrã (português europeu) é um aplicativo de software que converte um texto em um discurso sintetizado, permitindo o usuário ouvir em vez de visualizar o conteúdo da Internet.[1] Em termos mais formais, o conteúdo mostrado na tela é enviado para uma saída independente da presença de um monitor de vídeo.[2] Então, as interpretações são sintetizadas para os usuários por meio de um sistema texto-voz,[3] ícones de áudio[4] ou um dispositivo de saída Braille.[5] Os leitores de tela são uma forma de tecnologia assistiva,[6] que são essenciais para pessoas com deficiência visual,[5] analfabetas ou com dificuldades de aprendizado.[2]
+    Os sistemas operacionais Microsoft Windows incluíram o leitor de tela Microsoft Narrator desde o Windows 2000. Já os sistemas operacionais da Apple Inc. Mac OS X, iOS, e tvOS incluem o leitor de tela rico em recursos VoiceOver, enquanto o sistema operacional do Google Android inclui o Google Text-to-Speech . Os aparelhos Samsung que que possuem Android incluem o Samsung Text-to-Speech. Os consoles que possuem Oralux Linux incluem o Emacspeak o Yasr e o Speakup. Os dispositivos BlackBerry 10 como o BlackBerry Z30 também possuem um leitor de tela incorporado (há leitores de tela livres para dispositivos BlackBerry mais antigos e menos potentes como o BBOS7).[7]
+    Também há leitores de tela livres e com código aberto como o Orca para sistemas Unix-like e o NonVisual Desktop Access (NVDA) para Windows. O NDVA está ganhando popularidade. Entretanto, os leitores de tela mais utilizados[8] são produtos comerciais separados. Entre os exemplos nos mercados de língua inglesa como os Estados Unidos estão o JAWS, da Freedom Scientific, o Window-Eyes, da GW Micro, o Dolphin Supernova, da Dolphin, o System Access, da Serotek, e o ZoomText Magnifier/Reader, da AiSquared.</p>
+    </div>
+</body>
+<script>
+  let btn = document.getElementById("ler_texto")
+  let txt = document.getElementsByClassName("texto")[0]
+
+  btn.onclick = function() {leitorTexto(txt.innerHTML)};
+
+function leitorTexto(texto) {
+  const speech = new SpeechSynthesisUtterance();
+    speech.text = texto;
+    speech.lang = "pt-BR";
+    window.speechSynthesis.speak(speech);
+}
+</script>
